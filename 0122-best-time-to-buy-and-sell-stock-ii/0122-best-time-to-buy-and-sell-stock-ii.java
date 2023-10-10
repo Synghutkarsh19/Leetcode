@@ -1,12 +1,9 @@
 class Solution {
     public int maxProfit(int[] p) {
-        int n = p.length;
         int res = 0;
-        for(int i = 0; i<n-1; i++){
-            int def = p[i+1]-p[i];
-            if(def>0) res+=def;
+        for(int i = 0; i<p.length-1; i++){
+            if((p[i+1]-p[i])>0) res+=(p[i+1]-p[i]);
         }
-
         return res;
     }
 }
