@@ -5,18 +5,17 @@ class Solution {
         int[] dp = new int[n+1];
         dp[0] = 0;
         dp[1] = 1;
+        int max = 0;
         for(int i = 2; i<=n; i++){
             if(i%2 == 0){
-                int x = i/2;
-                dp[i] = dp[x];
+                dp[i] = dp[i/2];
             }
             else{
-                int x = (i-1)/2;
-                int y = x+1;
-                dp[i] = dp[x]+dp[y];
+                dp[i] = dp[i/2]+dp[i/2 +1];
             }
+            max = Math.max(dp[i], max);
         }
-        Arrays.sort(dp);
-        return dp[n];
+        
+        return max;
     }
 }
