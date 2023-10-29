@@ -1,7 +1,6 @@
 class Solution {
     public String decodeMessage(String key, String message) {
         key = key.replaceAll(" ", "");
-        System.out.println(key.length());
         ArrayList<Character> arr = new ArrayList<>();
         for(int i = 0; i<key.length(); i++){
             if(!arr.contains(key.charAt(i)))arr.add(key.charAt(i));
